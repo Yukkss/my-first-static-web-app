@@ -15,8 +15,8 @@ jobs:
     - uses: actions/checkout@v3
     - uses: azure/login@v2
       with:
-          client-id: 7a6c0df2-8dc8-44a7-840a-34eei9078f2c
-          tenant-id: 92d410e7-ffe1-4382-8641-u917bda7f57a
+          client-id: 7a6c0df2-8dc8-44a7-840a-34eec9078f2c
+          tenant-id: 92d410e7-ffe1-4382-8641-c917bda7f57a
           subscription-id: 92d410e7-ffe1-4382-8641-c917bda7f57a
 
     - name: Upload to blob storage
