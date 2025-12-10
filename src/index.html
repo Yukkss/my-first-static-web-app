@@ -1,17 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<html lang="fr"> 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+    <meta charset="utf-8" />
+    <meta name="Author" Content="Filippos MARKAKIS, Walid DAHI" />
+    <link rel="stylesheet" href="css/deafault.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/scripts.js"></script>	
+	<title>Location Voiture: CousCous à la Grec </title>	
+	<meta name="description" content="Site de Location Voiture " />
+	<meta name="keywords" content="Location,Voiture,Annecy,haute,Savoie,Haute-Savoie,prix-bas,pas-cher,promo"/>
+	
+	
+	
+
 </head>
-
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
-</body>
+    <header >
+        
+    <div class="container">
+        <div class="seconn">
+            <button id="seconn" onclick = "window.location.href='./login.php';">Se Connecter</button>
+        </div>
+        <nav>
+        <div class="menu">
+            <button id="butmenu">MENU</button>
+            <div class="menu-content">
+                <a>Recherche</a>
+                <a>Contact</a>                
+            </div>
 
-</html>
+        </div>
+    </nav>
+    </div>
+
+    </header>
+    
+    <div id="container">
+        <form method ="GET" action="rechercheVoiture.php">
+            <h2>Date Debut Location</h2>
+            <div id="PriseDate">
+                
+                <tr>
+                    <td><input name="P_start_date" type="date" id="date" onload="getDate()" ></td>
+</td>
+                </tr>
+            </div>
+
+            
+            <h2>Date Fin Location</h2>
+            <div id="RetourDate">
+                
+                <tr>
+                    <td><input name="P_end_date" type="date" id="date" onload="getDate()"></td>
+                </tr>
+            </div>
+        <div id="Envoie">
+        <tr>
+            <td><input type="submit" value="Rechercher des voitures disponibles"> </td>
+            
+        </tr>
+    </div>
+            
+
+        </form>
+
+    </div>
+</body>
