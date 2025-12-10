@@ -1,9 +1,0 @@
-@charset "UTF-8";
-
-*, *::before, *::after	
-{
-	box-sizing: border-box;
-	margin: 1;
-	padding: 1;
-}
-
