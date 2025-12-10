@@ -1,0 +1,3 @@
+username -> rtalt3
+mdp -> uWSVRD
+https://srv-prj-new.iut-acy.local/phppgadmin/

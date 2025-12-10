@@ -1,0 +1,55 @@
+<?php
+
+ session_start();
+ if (isset($_SESSION['login']) && isset($_SESSION['passwd'])) {
+    $login = $_SESSION['login'];
+    $passwd = $_SESSION['passwd'];
+	$typelogin = $_SESSION['type'];
+ }
+ if ($typelogin == "user"){
+	 header ("Location:premierPage.php");
+ }
+require_once 'fonctionsConnexion.php'; 	// déclaration du fichier contenant des fonctions pouvant être appelées
+require_once 'fonctionsBDD.php'; // délaration du fichier contenant des fonctions liées à l'utilisation de la BDD pouvant  êre appelées
+
+$conn1=connexionBDD('paramCon.php'); 	// appel de la fonction connexionBDD. Le résultat retourné (un connecteur à la bdd) sera dans la variable $conn1
+// à partir d'ici, on est connecté à  la BDD acec le connecteur $conn1
+?>
+<html>
+	<head>
+		<title>Titre : Modification de la réservation</title>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<h1>Modification de la bdd</h1>
+
+		<!-- ceci est un commentaire en HTML -->
+		<h2>La variable reçue est normalement présente dans l'url.</h2>
+		<strong>Vérifiez sa présence</strong>
+		<br /> <!-- saut de ligne en html -->
+
+		Variable(s) reçue(s) (pour verification) :
+		<?php
+		// on récupère les paramètres GET ou POST (elles sont dans le tableau sur le serveur) et on crée une nouvelle variable pour les appeler ultérieurement
+		//(cette opération n'est pas obligatoire - on peut accéder par la suite à la variable par le tableau
+		// on préfère pour des raisons de clareté de code copier la variable du tableau dans une variable (php)
+		$local_idreservation = $_GET['P_refidreservation'];
+		echo $local_idreservation."<br />";
+		
+		$local_idvoiture = $_GET['P_refidvoiture'];
+		echo $local_idreservation."<br />";
+		
+		$index=ModifierVoitureReservation( $conn1,$local_idvoiture,$local_idreservation);
+		
+		
+		
+
+		// fermeture de la connexion a la base de donnees.
+		deconnexionBDD($conn1);
+		header( "refresh:2;url=afficheReservations.php" );
+		?>
+		Fin code de la modification du compte
+		<br />
+		<h2>Verifier que l'enregistrement est effectif dans la base de données (avec phpPgAdmin par exemple)<h2>
+	</body>
+</html>
